@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 圆周率Π可以由下面的莱布尼茨级数公式计算出来，请让用户输入参数n，计算圆周率Π
+        var sum = 0;
+        var result = 1;
+        var n = Number(prompt('请输入数字n'))
+        for (i = 1; i <= n; i++) {
+            result *= i / (2 * i + 1);
+            sum += result;
+        }
+        alert((sum + 1) * 2);
+    </script>
+</body>
+
+</html>
