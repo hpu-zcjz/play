@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传递闭包计算</title>
+</head>
+
+<body>
+    <script>
+        var bibao = Number(prompt(`请输入矩阵的维数`));
+        var E = new Array(bibao).fill(0);//输入的矩阵
+        var D = new Array(bibao).fill(0);//传递闭包矩阵
+
+        for (var z = 0; z < bibao; z++) {
+            A[z] = new Array(bibao).fill(0);
+        }
+
+        //得到输入的矩阵
+        function ls(bibao) {
+            for (var a = 0; a < bibao; a++) {
+                g = a + 1;
+                alert(`请输入矩阵的第${g}行`)
+                for (var b = 0; b < bibao; b++) {
+                    A[a][b] = Number(prompt());
+                }
+            }
+        }
+        var D = E;
+        ls(bibao);
+        //warshall算法 计算传递闭包
+        function warshall(bibao) {
+            for (var i = 0; i < bibao; i++) {
+                for (var j = 0; j < bibao; j++) {
+                    if (E[j][i]) {
+                        for (var k = 0; k < bibao; k++) {
+                            D[j][k] = E[j][k] | E[i][k];//逻辑加
+                        }
+                    }
+                }
+            }
+            alert(D);
+            // 得到输入的矩阵
+        }
+        warshall(bibao);//调用函数得到传递闭包
+        alert(`请到控制台查看计算结果
+                    答案为：
+                            传递闭包
+                            感谢使用`)
+    </script>
+    <h1>谢谢使用!好好学习天天向上！</h1>
+</body>
+
+</html>
